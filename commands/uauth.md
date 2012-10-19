@@ -8,15 +8,6 @@ database and may not SELECT a different database. The session is also not able
 to execute admin or other destructive commands (i.e.: FLUSHALL, INFO, and
 SLOWLOG).
 
-Multiple requireupass directives are allowed in a single configuration file,
-however, they may not define a user with the same password as another
-requireupass or requirepass directive.
-
-The requireupass directive may not be placed after a databases directive, nor
-can a databases directive be placed after a requireupass directive.  As each
-requireupass user is assigned their own database, the total number of databases
-is set to be the number of users and may not be changed.
-
 If `password` matches the password in the configuration file, the server replies
 with the `OK` status code and starts accepting commands.
 Otherwise, an error is returned and the clients needs to try a new password.
